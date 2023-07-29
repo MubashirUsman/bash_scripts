@@ -1,0 +1,11 @@
+name: comment everytime an issue is opened
+on:
+  issues:
+    types: [opened]
+jobs:
+  comment-on-issues:
+  runs-on: ubuntu-latest
+  steps:
+    - name: "dump github context"
+      run: echo '${{ toJSON(github.event) }}' | jq
+      shell: bash
