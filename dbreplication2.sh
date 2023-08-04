@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# Replace these variables with your Slack webhook URL and channel name
 SLACK_WEBHOOK_URL=$WEBHOOK_URL
 SLACK_CHANNEL=$SLACK_CHANEEL
 
-# Path to the file you want to check
 FILE_PATH="/tmp/newfile.txt"
 
 # Function to send a Slack message with the error
