@@ -13,10 +13,9 @@ send_slack_alert() {
 }
 
 while true; do
-    # Read the last 200 lines of the file and check for the keyword "replication"
+
     error_lines=$(tail -n 1 "${FILE_PATH}" | grep "bat")
 
-    # If there are any error lines, send a Slack alert
     if [ -n "$error_lines" ]; then
         error_message="Error: Found 'replication' keyword in the last 200 lines of the file:\n$error_lines"
         send_slack_alert "$error_message"

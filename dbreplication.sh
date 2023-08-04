@@ -5,13 +5,11 @@ SLACK_CHANNEL=$SLACK_CHANEEL
 
 FILE_PATH="/tmp/newfile.txt"
 
-# Function to send a Slack message with the error
 send_slack_alert() {
     message="Hello bash"
     curl -X POST -H 'Content-type: application/json' --data "{\"channel\":\"${SLACK_CHANNEL}\",\"text\":\"${message}\",\"color\":\"danger\"}" "${SLACK_WEBHOOK_URL}"
 }
 
-# Read the last 200 lines of the file and check for the keyword "replication"
 error_lines=$(tail -n 200 "${FILE_PATH}" | grep "terraformmount")
 
 if [ -n "$error_lines" ]; then
