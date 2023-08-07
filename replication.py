@@ -19,7 +19,7 @@ def send_slack_message(messasge):
 
 error_logs_file = "/var/log/mysql/error.log"
 def error_log(log_path):
-    number_of_lines = 200
+    number_of_lines = 10
     count = 0
     current_time = datetime.now()
     current_time = current_time.strftime("%Y-%m-%dT%H:%M")

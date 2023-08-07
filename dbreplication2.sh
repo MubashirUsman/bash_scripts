@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SLACK_WEBHOOK_URL=$WEBHOOK_URL
-SLACK_CHANNEL=$SLACK_CHANEEL
+SLACK_CHANNEL=$SLACK_CHANNEL
 
 FILE_PATH="/tmp/newfile.txt"
 
@@ -19,6 +19,8 @@ while true; do
     if [ -n "$error_lines" ]; then
         error_message="Error: Found 'replication' keyword in the last 200 lines of the file:\n$error_lines"
         send_slack_alert "$error_message"
+    else
+        printf "Didn't found the error!! \n"
     fi
 
     # Adjust the delay interval as needed (e.g., 5 seconds in this example)
