@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SLACK_WEBHOOK_URL=$WEBHOOK_URL
-SLACK_CHANNEL=$SLACK_CHANNEL
+SLACK_CHANNEL=$SLACK_CHANNEL #testingpythonalerts
 
 FILE_PATH="/tmp/newfile.txt"
 
